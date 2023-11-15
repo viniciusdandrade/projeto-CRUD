@@ -1,0 +1,2 @@
+arroz,eu,romance,12
+aaa,eu,romance,23
