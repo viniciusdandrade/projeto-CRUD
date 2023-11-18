@@ -4,6 +4,7 @@ def Excluir():
     novo_conteudo=""
     with open("lib.txt","r") as arquivo:
         conteudo=arquivo.read()
+        # Divide os livros como unidade e transforma em lista.
         livros=conteudo.split("---\n")
         for livro in livros:
             if "Nome: " + nome_do_livro not in livro:
@@ -15,4 +16,4 @@ def Excluir():
         with open("lib.txt","w") as arquivo:
             arquivo.write(novo_conteudo)
     else:
-        print("Livro não encontrado")                        
+        print("Livro não encontrado.")                        
