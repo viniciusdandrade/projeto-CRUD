@@ -8,8 +8,8 @@ def MostrarMenu():
             Visualizar()
         #elif opcao == 3:
             #Atualizar()
-        #elif opcao == 4:
-            #Excluir()
+        elif opcao == 4:
+            Excluir()
         elif opcao == 5:
             GastoTotal()
         elif opcao == 6:
@@ -34,6 +34,24 @@ def Visualizar():
     arquivo = open("lib.txt", 'r')
     print(arquivo.read())
 
+def Excluir():
+    nome = input("Digite o nome do livro que será excluído: ")
+
+    with open("lib.txt",'r') as arquivo:
+        linhas = arquivo.readlines()
+
+    index = None
+    for i, linha in enumerate(linhas):
+        if linha.startswith(f"Nome: {nome}"):
+            index = i
+            break
+    
+    if index != None:
+        del linhas[index:index+4]
+
+        with open("lib.txt",'w') as arquivo:
+            arquivo.writelines(linhas)
+                
 def GastoTotal():
     gasto = 0
     with open("lib.txt",'r') as arquivo:
