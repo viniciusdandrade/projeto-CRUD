@@ -6,10 +6,10 @@ def MostrarMenu():
             Adicionar()
         elif opcao == 2:
             Visualizar()
-        elif opcao == 3:
-            Atualizar()
-        elif opcao == 4:
-            Excluir()
+        #elif opcao == 3:
+            #Atualizar()
+        #elif opcao == 4:
+            #Excluir()
         elif opcao == 5:
             GastoTotal()
         elif opcao == 6:
@@ -21,29 +21,28 @@ def Adicionar():
     categoria = input("Digite a categoria: ")
     custo = float(input("Digite quanto o o livro custou: "))
     
-    with open("biblioteca.txt", 'a') as arquivo:
+    with open("lib.txt", 'a') as arquivo:
         arquivo.write("Nome: "+nome + '\n')
         arquivo.write("Autor: "+autor + '\n')
         arquivo.write("Categoria: "+categoria + '\n')
         arquivo.write(f"Custo: R${custo}\n")
-        gasto += custo
         arquivo.write("\n")
     
     print("Livro adicionado com sucesso!")
 
 def Visualizar():
-    arquivo = open("biblioteca.txt", 'r')
+    arquivo = open("lib.txt", 'r')
     print(arquivo.read())
 
 def GastoTotal():
     gasto = 0
-    with open("biblioteca.txt",'r') as arquivo:
+    with open("lib.txt",'r') as arquivo:
         linhas = arquivo.readlines()
 
     for linha in linhas:
-        if linhas.startswith("Custo: R$"):
+        if linha.startswith("Custo: R$"):
             gasto += float(linha.split('R$')[1])
         
-    print(f"O gasto total com a biblioteca foi de {gasto:.2f} reais.")
+    print(f"\nO gasto total com a biblioteca foi de {gasto:.2f} reais.")
 
 MostrarMenu()
