@@ -1,4 +1,4 @@
-def func_excluir():
+def Excluir():
     nome_do_livro=input("Digite o nome do livro que você deseja excluir: ")
     livro_presente=False
     novo_conteudo=""
