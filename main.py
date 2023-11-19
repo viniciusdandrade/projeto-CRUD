@@ -6,8 +6,8 @@ def MostrarMenu():
             Adicionar()
         elif opcao == 2:
             Visualizar()
-        elif opcao == 3:
-            Atualizar()
+        #elif opcao == 3:
+            #Atualizar()
         elif opcao == 4:
             Excluir()
         elif opcao == 5:
@@ -33,31 +33,6 @@ def Adicionar():
 def Visualizar():
     arquivo = open("lib.txt", 'r')
     print(arquivo.read())
-
-def Atualizar():
-    nome = input("Digite o nome do livro cujas informações serão atualizadas: ")
-    novo_nome = input("Digite o novo nome do livro: ")
-    novo_autor = input("Digite o novo nome do autor: ")
-    nova_categoria = input("Digite a nova categoria: ")
-    novo_custo = float(input("Digite o novo custo do livro: "))
-
-    with open("lib.txt", 'r') as arquivo:
-        linhas = arquivo.readlines()
-
-        index = None
-        for i, linha in enumerate(linhas):
-            if linha.startswith(f"Nome: {nome}"):
-                index = i
-                break
-    
-        if index != None:
-            linhas[index] = f"Nome: {novo_nome}\n"
-            linhas[index + 1] = f"Autor: {novo_autor}\n"
-            linhas[index + 2] = f"Categoria: {nova_categoria}\n"
-            linhas[index + 3] = f"Custo: R${novo_custo}\n"
-
-            with open("lib.txt",'w') as arquivo:
-                arquivo.writelines(linhas)
 
 def Excluir():
     nome = input("Digite o nome do livro que será excluído: ")
