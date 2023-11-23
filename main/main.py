@@ -79,7 +79,7 @@ def Atualizar():
                     novo_nome = input("Digite o  nome do livro: ")
                     novo_autor = input("Digite o nome do autor: ")
                     nova_categoria = padronizar_entrada(input("Digite a categoria: "))
-                    novo_custo = float(input("Digite quanto o o livro custou: "))
+                    novo_custo = input("Digite quanto o o livro custou: ")
                     
                     #Altera as informações do livro.
                     livro_atualizado = "Nome: " + novo_nome + "\n"
