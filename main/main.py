@@ -36,13 +36,11 @@ def MostrarMenu():
 def Adicionar():
     
     try : 
-        
         nome = input("Digite o  nome do livro: ")
         autor = input("Digite o nome do autor: ")
         categoria = padronizar_entrada(input("Digite a categoria: "))
         custo = float(input("Digite quanto o o livro custou: "))
     
-          
         with open("lib.txt", 'a', encoding="utf8") as arquivo:
             arquivo.write("Nome: "+nome + '\n')
             arquivo.write("Autor: "+autor + '\n')
@@ -52,7 +50,7 @@ def Adicionar():
     
             print("Livro adicionado com sucesso!")
     except ValueError :
-        print("Digite um valor numerico") #tratamento de erro caso não se digite o valor esperado
+        print("Digite um valor numérico") #tratamento de erro caso não se digite o valor esperado
         
 
 #Opção 2
