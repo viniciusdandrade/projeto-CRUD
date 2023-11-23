@@ -36,7 +36,7 @@ def MostrarMenu():
 def Adicionar():
     
     try : 
-        nome = input("Digite o  nome do livro: ")
+        nome = input("Digite o  nome do livro: ") #inserção de dados
         autor = input("Digite o nome do autor: ")
         categoria = padronizar_entrada(input("Digite a categoria: "))
         custo = float(input("Digite quanto o o livro custou: "))
